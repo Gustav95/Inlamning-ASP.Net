@@ -1,0 +1,47 @@
+﻿@{
+    var products = await productService.GetFeaturedProductsAsync("Featured");
+}
+
+
+<section class="up-to-sell">
+        <div class="container">
+            <div class="collection-grid">
+             
+                <div class="discover">
+                    <!-- collection-content start -->
+                    <div class="collection-content">
+                        <div class="container">
+                            <div class="title-red">UP TO SELL</div>
+                            <div class="title">50% OFF</div>
+                            <div class="ingress">Get the Best Price</div>
+                            <div class="text">Get the best daily offer et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren no sea taki</div>
+                            <a href="#" class="link">Discover More</a>
+                        </div>
+                    </div>
+                    <!-- collection-content end -->
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="collection-grid">
+                @foreach (var product in products)
+                {
+                    <a href="#" class="collection-item">
+                        <img src="@product.ImgURL" alt="">
+                        <div class="body">
+                            <div class="title">@product.Name</div>
+                            <div class="info">
+                                <div class="price">$@product.Price.ToString()</div>
+                                <i class="add-cart fa-regular fa-cart-plus"></i>
+                            </div>                       
+                        </div>
+                    </a>
+                }
+              
+            
+            </div>
+        </div>
+
+    </section>

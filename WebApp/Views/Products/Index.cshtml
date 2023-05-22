@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Produkter";
+    var products = await productService.GetAllAsync();
+}
+
+
+
+
+<div class=" col-3">
+<a asp-controller="products" asp-action="register" class="m-2 btn btn-primary">Skapa nytt</a>
+</div>
+
+
+<div class="row align-items-start">
+@if (products != null) {
+    
+    foreach(var product in products)
+    {
+
+    <div class="col-3 card-deck">    
+        
+        <div class="card" style="width: 18rem;">
+             <img src="@product.ImgURL" class="card-img-top" alt="...">
+             <div class="card-body">
+               <h5 class="card-title">@product.Name</h5>
+                <p class="card-text">@product.Description</p>
+                <h6 class="card-subtitle mb-2 text-muted">@product.Price</h6>
+                <a asp-controller="products" asp-action="Detail" asp-route-id ="@product.Id" class="m-2 btn btn-primary">MER</a>
+             </div>
+        </div>      
+    </div>
+
+    }  
+} </div>
+
+

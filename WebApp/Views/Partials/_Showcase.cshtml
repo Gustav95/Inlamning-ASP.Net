@@ -1,0 +1,18 @@
+﻿@{  var products = await productService.GetShowcaseAsync("Showcase");}
+
+
+<section class="showcase">
+        <div class="container">
+            @foreach (var product in products.Take(1)){
+            <div class="content">
+                <div class="ingress">WELCOME TO BMERKETO SHOP</div>
+                <div class="title">@product.Name</div>
+                <button class="btn-theme">SHOP NOW</button>
+            </div>
+            
+            <div class="content-image">
+                <img src="@product.ImgURL" alt="">
+            </div>
+            }
+        </div>
+    </section>

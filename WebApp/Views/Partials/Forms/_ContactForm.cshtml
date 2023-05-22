@@ -1,0 +1,57 @@
+﻿@model ContactViewModel
+
+<section class="contact-form">
+        <div class="container">
+            <div class="title">Write something</div>
+            
+            <form method="post" novalidate>
+                <div class="name form-group">
+                <label asp-for="Name" class="form-label"></label>
+                <input id="name" asp-for="Name" class="form-control" />
+                <span id="name-value"></span>
+                <small><span asp-validation-for="Name" class="text-danger"></span></small>
+                </div>
+
+
+                <div class="email form-group">
+                <label asp-for="Email" class="form-label"></label>
+                <input id="email" asp-for="Email" class="form-control" />
+                <span id="email-value"></span>
+                <small><span asp-validation-for="Email" class="text-danger"></span></small>
+                </div>
+
+
+                <div class="phoneNumber form-group">
+                <label asp-for="PhoneNumber" class="form-label">PhoneNumber (optional)</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                    
+                </div>
+
+
+                <div class="companyName form-group">
+                <label asp-for="CompanyName" class="form-label">CompanyName (optional)</label>
+                <input asp-for="CompanyName" class="form-control" />
+                </div>
+
+
+                <div class="message form-group">
+                <label asp-for="Message" class="form-label"></label>
+                <input asp-for="Message" class="form-control" />
+                <small><span asp-validation-for="Message" class="text-danger"></span></small>
+                </div>
+
+
+                <div class="terms form-checkbox-group">
+                    <label class="custom-checkbox">Save my name, email in the this browser for the next time I comment.
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <button class="btn-theme">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        validatecontact()
+    </script>

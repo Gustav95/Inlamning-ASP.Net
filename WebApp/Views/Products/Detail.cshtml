@@ -1,0 +1,54 @@
+﻿@model ProductModel
+@{
+    ViewData["Title"] = "Detail";   
+}
+
+
+ <section class="product-details">
+        <div class="container justify-content-center d-flex">
+            <div class="grid">
+                <div class="big-img">
+                    <div class="img-holder">
+                        <img src="@Model.ImgURL" />
+                    </div>
+                </div>
+                
+                <div class="product-text">
+                    <div class="Name"><h1>@Model.Name</h1></div>
+                    <div class="product-description">@Model.Description</div>
+                    <hr>
+                    <div class="product-price">@Model.Price</div>
+                    <div class="review">
+                        <div class="star-holder"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i></div>
+                        <div class="review-count">16 Reviews</div>
+                    </div>
+                    
+                    
+                    <div class="d-flex">
+                        <div class="in-stock-indicator">
+                            <div class="out-of-stock circle"></div>
+                            <div class="few-in-stock circle"></div>
+                            <div class="in-stock circle"></div>
+                        </div>
+                        <div class="product-sku">SKU: N/A</div>
+                    </div>
+                    <button class="btn-white">Add to wishlist</button>
+                    <div class="product-category">Category: Table Lamp, Light</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
